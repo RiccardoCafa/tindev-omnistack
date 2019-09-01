@@ -11,17 +11,10 @@ module.exports = ({
         const targetDev = await Devs.findById(devId);
 
         if(!targetDev) {
-            return res.status(400).json({ error: 'Dev inexistente.'});
+            return res.status(400).josn({ error: 'Dev inexistente.'});
         }
 
-        if(targetDev.likes.includes(loggedDev._id)) {
-            console.log('Deu match rapaz');
-        }
-        
-        if(loggedDev.likes.includes(targetDev._id)) {
-            console.log('Já existe um like para esse usuário.');
-            loggedDev.likes.push(targetDev._id);
-        }
+        loggedDev.dislikes.push(targetDev._id);
 
         await loggedDev.save();
 
