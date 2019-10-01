@@ -10,9 +10,9 @@ mongoose.connect('mongodb+srv://RiccardoBolado:omnistack@tindev-lejjq.mongodb.ne
     useNewUrlParser: true
 });
 
-server.use(cors());
-server.use(express.json());
-server.use(routes);
+server.use(cors())
+server.use(express.json())
+server.use(routes)
 
 server.listen(3333);
 
